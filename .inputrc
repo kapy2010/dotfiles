@@ -1,0 +1,46 @@
+# mapping... something to something
+"\e1": "Â©"
+"\e2": "@"
+"\e3": "Â£"
+"\e4": "$"
+"\e5": "â"
+"\e6": "Â§"
+"\e7": "|"
+"\e8": "["
+"\e9": "]"
+"\e0": "â"
+"\e/": "\\"
+"\e(": "{"
+"\e)": "}"
+
+# Press TAB once (instead of twice) to auto-complete
+set show-all-if-ambiguous on
+# No bell.  No ^G in output
+set bell-style none
+# Don't query user about viewing the number of possible completions
+set completion-query-items -1
+# Display completions sorted horizontally, not vertically
+set print-completions-horizontally on
+# Ignore case when completing, very nice!
+set completion-ignore-case on
+# Complete with trailing slash for symlinks
+set mark-symlinked-directories on
+# This will suffix each returned file completion with a character
+# denoting its type, in a similar way to ls(1) with -F or --classify
+#set visible-stats on
+  
+"\e[1~": beginning-of-line # Home key
+"\e[4~": end-of-line # End key
+"\e[3~": delete-char # Delete key
+"\e[5C": forward-word # Ctrl+right 
+"\e[5D": backward-word # Ctrl+left 
+"\e\e[C": forward-word # Alt+right 
+"\e\e[D": backward-word # Alt+left
+"\C-K": unix-line-discard # Ctrl+K 
+"\e\"": "@{}\e[D" # Insert @{} move cursor into braces
+
+# http://codeinthehole.com/writing/the-most-important-command-line-tip-incremental-history-searching-with-inputrc/
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"\e[C": forward-char
+"\e[D": backward-char

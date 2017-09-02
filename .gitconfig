@@ -1,0 +1,27 @@
+[user]
+  name = Kapil Singh
+  email = singh.kapy@gmail.com
+[credential]
+  helper = netrc -f ~/.netrc.asc -v
+[core]
+  autocrlf = input
+  whitespace = trailing-space
+  excludesfile = ~/.gitignore
+[color]
+  ui = true
+[push]
+  default = simple
+[alias]
+  aa = add --all
+  br = branch
+  ca = commit --amend
+  co = commit
+  ch = checkout
+  ctags = !.git/hooks/ctags
+  dc = diff --cached
+  di = diff
+  lf = log --pretty=fuller
+  rc = rebase --continue
+  st = status
+[log]
+  decorate = short
