@@ -153,6 +153,9 @@ if [[ -d "$BRING_DIR" && -x $BRING_DIR/b-scripts/bin/b ]]; then
 fi
 export POSTEN_SLACK_USERNAME=kapy
 
+# groovy
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+
 #
 # local overrides (.bashrc.local isn't in the dotfiles repo)
 #
@@ -160,3 +163,13 @@ export POSTEN_SLACK_USERNAME=kapy
 if [ -f ~/.bashrc.local ]; then
     . ~/.bashrc.local
 fi
+
+# postresql
+export PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin:$PATH"
+
+
+alias tunnel_postgres_test='ssh -L 5555:pg-a.test.bd.bring.no:5432 bring@mybring1test.bd.bring.no'
+alias tunnel_postgres_qa_a='ssh -L 5555:pg-a.qa.bd.bring.no:5432 bring@mybring1qa.bd.bring.no'
+alias tunnel_postgres_qa_b='ssh -L 5555:pg-b.qa.bd.bring.no:5432 bring@mybring1qa.bd.bring.no'
+alias tunnel_postgres_prod_a='ssh -L 5555:pg-a.bd.bring.no:5432 bring@mybring1prod.bd.bring.no'
+alias tunnel_postgres_prod_b='ssh -L 5555:pg-b.bd.bring.no:5432 bring@mybring1prod.bd.bring.no'
