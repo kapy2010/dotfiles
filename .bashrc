@@ -111,8 +111,8 @@ if [ -f /usr/local/Library/Contributions/brew_bash_completion.sh ]; then
 fi
 
 # set proxy
-if [ -f ~/.set_proxy ]; then
-    . ~/.set_proxy
+if [ -f ~/.setproxy ]; then
+    . ~/.setproxy
 fi
 
 # autojump
@@ -173,3 +173,11 @@ alias tunnel_postgres_qa_a='ssh -L 5555:pg-a.qa.bd.bring.no:5432 bring@mybring1q
 alias tunnel_postgres_qa_b='ssh -L 5555:pg-b.qa.bd.bring.no:5432 bring@mybring1qa.bd.bring.no'
 alias tunnel_postgres_prod_a='ssh -L 5555:pg-a.bd.bring.no:5432 bring@mybring1prod.bd.bring.no'
 alias tunnel_postgres_prod_b='ssh -L 5555:pg-b.bd.bring.no:5432 bring@mybring1prod.bd.bring.no'
+alias postenidqatunnel='ssh -L 5435:pg-b.qa.bd.bring.no:5432 mybring1qa'
+alias postenidprodtunnel='ssh -L 5439:pg-b.bd.bring.no:5432 mybring1prod'
+alias postenidtesttunnel='ssh -L 5429:pg-a.test.bd.bring.no:5432 mybring1test'
+
+# for viewing markdown files from terminal
+rmd () {
+  pandoc $1 | lynx -stdin
+}
