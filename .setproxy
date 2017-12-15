@@ -1,0 +1,5 @@
+function setproxy() {
+    local sigweb_proxy="http://webguard.posten.no:8080"
+    echo "Enabling proxy: $sigweb_proxy"
+    export http_proxy=$sigweb_proxy && export https_proxy=$sigweb_proxy
+}
