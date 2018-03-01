@@ -181,3 +181,4 @@ alias postenidtesttunnel='ssh -L 5429:pg-a.test.bd.bring.no:5432 mybring1test'
 rmd () {
   pandoc $1 | lynx -stdin
 }
+
